@@ -1,0 +1,597 @@
+/* Import Font dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Variabel Warna untuk Dark Mode */
+:root {
+    --bg-dark: #1A1A1A; /* Latar belakang utama gelap */
+    --card-dark: #2A2A2A; /* Latar belakang card gelap */
+    --text-light: #F0F0F0; /* Teks terang */
+    --text-gray: #A0A0A0; /* Teks abu-abu sekunder */
+    --accent-purple: #7B00FF; /* Warna ungu aksen utama */
+    --accent-purple-light: #9B3DFF; /* Warna ungu aksen terang */
+    --gradient-purple: linear-gradient(90deg, #7B00FF 0%, #B06DFF 100%); /* Gradien ungu */
+    --border-dark: #3A3A3A; /* Border gelap */
+    --shadow-dark: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Reset dan Gaya Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+    overflow-x: hidden; /* Mencegah scroll horizontal */
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-light);
+}
+
+section {
+    padding: 100px 8%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Header & Navigasi */
+.header {
+    position: fixed;
+    top: 30px; /* Jarak dari atas */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%; /* Lebar navbar */
+    max-width: 800px; /* Batasan lebar */
+    padding: 12px 20px;
+    background: var(--card-dark);
+    border-radius: 50px; /* Bentuk kapsul */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: var(--shadow-dark);
+    border: 1px solid var(--border-dark);
+}
+
+.header .logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-right: 20px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.navbar a {
+    margin: 0 15px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    color: var(--text-gray); /* Warna teks navigasi */
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--text-light);
+}
+
+.send-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: var(--gradient-purple);
+    border-radius: 50%;
+    color: var(--text-light);
+    margin-left: 20px;
+    box-shadow: 0 0 10px rgba(123, 0, 255, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.send-icon:hover {
+    transform: scale(1.1);
+}
+
+.hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: var(--text-light);
+}
+
+/* Bagian Hero (Home) */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px; /* Agar tidak tertutup header */
+}
+
+.hero-content {
+    display: flex;
+    flex-wrap: wrap; /* Untuk responsif */
+    justify-content: center;
+    align-items: center;
+    gap: 50px; /* Jarak antar elemen */
+    max-width: 1200px;
+    text-align: left; /* Teks konten di kiri */
+}
+
+.profile-pic-container {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid var(--accent-purple);
+    box-shadow: 0 0 0 10px rgba(123, 0, 255, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0; /* Mencegah gambar mengecil */
+}
+
+.profile-pic-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.intro-text {
+    max-width: 600px;
+    text-align: left;
+}
+
+.intro-text .greeting {
+    color: var(--text-gray);
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.intro-text h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: var(--text-light);
+}
+
+.intro-text .profession {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--accent-purple);
+    margin-bottom: 20px;
+}
+
+.intro-text p {
+    font-size: 16px;
+    color: var(--text-gray);
+    margin-bottom: 30px;
+    line-height: 1.7;
+}
+
+.btn-cv {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 25px;
+    background: var(--gradient-purple);
+    color: var(--text-light);
+    border-radius: 8px;
+    font-weight: 500;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(123, 0, 255, 0.3);
+}
+
+.btn-cv i {
+    margin-right: 10px;
+}
+
+.btn-cv:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(123, 0, 255, 0.4);
+}
+
+/* Bagian Umum */
+h2 {
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--text-light);
+}
+
+/* Bagian About Me */
+.about {
+    background-color: var(--bg-dark);
+    padding-bottom: 50px; /* Ruang tambahan di bawah About Me */
+}
+
+.about-description {
+    max-width: 800px;
+    margin: 0 auto 50px;
+    font-size: 17px;
+    color: var(--text-gray);
+    line-height: 1.8;
+}
+
+.experience-title {
+    margin-top: 80px;
+    margin-bottom: 40px;
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    width: 100%;
+    text-align: left;
+}
+
+.experience-card {
+    background-color: var(--card-dark);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid var(--border-dark);
+    box-shadow: var(--shadow-dark);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.experience-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-purple);
+}
+
+.experience-card .date {
+    font-size: 14px;
+    color: var(--accent-purple-light);
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.experience-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--text-light);
+}
+
+.experience-card p {
+    font-size: 15px;
+    color: var(--text-gray);
+    line-height: 1.7;
+}
+
+/* Bagian Portofolio */
+.portfolio {
+    background-color: var(--bg-dark);
+}
+
+.portfolio-tagline {
+    max-width: 800px;
+    margin: 0 auto 50px;
+    font-size: 17px;
+    color: var(--text-gray);
+    line-height: 1.8;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.portfolio-item {
+    background-color: var(--card-dark);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-dark);
+    box-shadow: var(--shadow-dark);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-purple);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.portfolio-item h3 {
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+/* Bagian Commitments */
+.commitments {
+    background-color: var(--bg-dark);
+    padding-bottom: 100px;
+}
+
+.commitments h2 {
+    margin-bottom: 50px;
+}
+
+.commitments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 25px;
+    max-width: 900px;
+    width: 100%;
+    margin-bottom: 80px;
+    text-align: left;
+}
+
+.commitment-card {
+    background-color: var(--card-dark);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid var(--border-dark);
+    box-shadow: var(--shadow-dark);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.commitment-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-purple);
+}
+
+.commitment-card .number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: var(--gradient-purple);
+    border-radius: 50%;
+    color: var(--text-light);
+    font-weight: 700;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.commitment-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--text-light);
+}
+
+.commitment-card p {
+    font-size: 15px;
+    color: var(--text-gray);
+    line-height: 1.6;
+}
+
+.cta-bottom {
+    margin-top: 80px;
+    max-width: 800px;
+}
+
+.cta-bottom h2 {
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.cta-bottom p {
+    font-size: 17px;
+    color: var(--text-gray);
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+.btn-hire-me {
+    display: inline-flex;
+    align-items: center;
+    padding: 14px 30px;
+    background: var(--gradient-purple);
+    color: var(--text-light);
+    border-radius: 8px;
+    font-weight: 600;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(123, 0, 255, 0.3);
+    font-size: 18px;
+}
+
+.btn-hire-me i {
+    margin-right: 10px;
+}
+
+.btn-hire-me:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(123, 0, 255, 0.4);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--card-dark);
+    padding: 30px 8%;
+    border-top: 1px solid var(--border-dark);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* Untuk responsif */
+    gap: 20px;
+}
+
+.footer-logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-light);
+}
+
+.footer-navbar a {
+    margin: 0 15px;
+    color: var(--text-gray);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.footer-navbar a:hover {
+    color: var(--text-light);
+}
+
+.social-icons a {
+    font-size: 20px;
+    margin-left: 20px;
+    color: var(--text-gray);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--accent-purple);
+    transform: translateY(-3px);
+}
+
+/* Desain Responsif */
+@media (max-width: 992px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .intro-text {
+        text-align: center;
+        max-width: 100%;
+    }
+    .intro-text h1 {
+        font-size: 42px;
+    }
+    .intro-text .profession {
+        font-size: 24px;
+    }
+
+    .experience-grid,
+    .portfolio-grid,
+    .commitments-grid {
+        grid-template-columns: 1fr; /* Satu kolom */
+    }
+
+    .commitment-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    .commitment-card .number {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        width: 95%;
+        top: 20px;
+        padding: 10px 15px;
+    }
+    .navbar {
+        display: none; /* Sembunyikan navbar di mobile */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--card-dark);
+        border-radius: 0 0 12px 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        border-top: 1px solid var(--border-dark);
+        overflow: hidden;
+    }
+
+    .navbar.active {
+        display: flex; /* Tampilkan saat aktif */
+    }
+
+    .navbar a {
+        margin: 0;
+        padding: 15px 20px;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid var(--border-dark);
+    }
+    .navbar a:last-child {
+        border-bottom: none;
+    }
+    .send-icon {
+        display: none; /* Sembunyikan send icon di navbar mobile */
+    }
+    .hamburger {
+        display: block; /* Tampilkan ikon hamburger */
+    }
+
+    section {
+        padding: 80px 5%;
+    }
+    h2 {
+        font-size: 32px;
+    }
+    .cta-bottom h2 {
+        font-size: 32px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-navbar {
+        flex-direction: column;
+        margin: 20px 0;
+    }
+    .footer-navbar a {
+        margin: 10px 0;
+    }
+    .social-icons a {
+        margin: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .intro-text h1 {
+        font-size: 36px;
+    }
+    .intro-text .profession {
+        font-size: 22px;
+    }
+    .profile-pic-container {
+        width: 250px;
+        height: 250px;
+    }
+    .experience-card, .portfolio-item, .commitment-card {
+        padding: 20px;
+    }
+    .experience-card h3, .portfolio-item h3, .commitment-card h3 {
+        font-size: 18px;
+    }
+    .cta-bottom h2 {
+        font-size: 28px;
+    }
+}
